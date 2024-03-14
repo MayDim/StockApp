@@ -1,0 +1,78 @@
+/* StockDetails.css */
+
+.overview-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+.overview-details, .historical-prices {
+    margin-bottom: 20px;
+}
+  
+.overview-heading, .historical-prices .overview-heading{
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.historical-prices {
+    max-height: 300px; /* Set a maximum height for the container */
+    overflow-y: auto; /* Enable vertical scrolling */
+    border: 1px solid #ccc; /* Add a border for visual separation */
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .historical-price-item {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+
+
+  .overview-details {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .stock-name {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .description {
+    margin-bottom: 15px;
+  }
+  
+  p {
+    margin-bottom: 5px;
+  }
+  
+.loading {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    position: relative;
+}
+  
+.loading::after {
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    border-top-color: #333;
+    position: absolute;
+    top: 50%;
+    left: calc(50% + 50px);
+    animation: loading-spin 1s linear infinite;
+}
+  
+@keyframes loading-spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
