@@ -2,6 +2,9 @@ import React from 'react';
 import "./StockApp.css";
 import { Link } from 'react-router-dom';
 
+// Import the Google Fonts CSS file
+import '../StockDetails/fonts.css'; // Adjust the path accordingly
+
 //Import Logos
 import AAPLLogo from '../assets/company_logos/apple.png';
 import GOOGLLogo from '../assets/company_logos/google.png';

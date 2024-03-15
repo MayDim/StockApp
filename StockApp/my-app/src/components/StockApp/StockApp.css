@@ -2,10 +2,14 @@ body{
     background-color: #CAC4CE;
 }
 
+.page-container h2{
+  font-family: 'Oswald'; 
+}
+
 .cards-container {
     display: grid;
     grid-template-columns: repeat(5, 1fr); /* 5 columns */
-    grid-gap: 10px; /* Adjust gap between cards */
+    grid-gap: 25px; /* Adjust gap between cards */
     margin: 50px;
   
   }
@@ -35,11 +39,7 @@ body{
   .ticker {
     font-size: 18px;
     font-weight: bold;
-  }
-  
-  .company-name {
-    font-size: 14px;
-    color: #666;
+    font-family: 'Raleway';
   }
   
 .company-name{
