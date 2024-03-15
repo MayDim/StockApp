@@ -3,12 +3,20 @@
 .overview-container {
   display: flex;
   margin: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .overview-details, .historical-prices {
     margin-bottom: 20px;
     flex: 1;
     padding-right: 40px;
+}
+
+.line-graph {
+  width: 100%;
+  max-width: 850px;
+  margin: 10px auto; /* Adjust margin */
 }
 
 .overview-details {

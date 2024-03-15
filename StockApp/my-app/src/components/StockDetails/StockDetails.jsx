@@ -8,6 +8,31 @@ import './fonts.css';
 //retrive stocks maps to display corresonding stock logo
 import { stocks } from '../StockApp/StockApp';
 
+//imports for line graph
+import { Line } from "react-chartjs-2";
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend,
+    PointElement,
+    LineElement,
+} from 'chart.js';
+
+ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend,
+);
+
 
 
 const StockDetails = () => {
@@ -63,7 +88,7 @@ const StockDetails = () => {
           }
       };
 
-      const fetchOverviewData = async () => {
+    const fetchOverviewData = async () => {
           try {
               const response = await fetch(url_overview);
               if (!response.ok) {
@@ -83,7 +108,28 @@ const StockDetails = () => {
 
       fetchHistoricalData();
       fetchOverviewData();
-  }, [url_time_series_daily, url_overview, ticker]);
+    }, [url_time_series_daily, url_overview, ticker]);
+
+    const renderLineGraph = () => {
+        const labels = historicalData.map(price => price.date);
+        const prices = historicalData.map(price => price.closePrice);
+
+        const data = {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Close Price',
+                    data: prices,
+                    fill: false,
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }
+            ]
+        };
+        
+
+        return <Line data={data}/>;
+    };
 
   
 
@@ -136,6 +182,10 @@ const StockDetails = () => {
                 </div>
             )}
         </div>
+        {/* Render line graph below historical prices */}
+        <div className="line-graph">
+            {renderLineGraph()}
+        </div> 
     </div>
   );
 };
