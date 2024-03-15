@@ -110,6 +110,7 @@ const StockDetails = () => {
       fetchOverviewData();
     }, [url_time_series_daily, url_overview, ticker]);
 
+    //create line graph from historical data map
     const renderLineGraph = () => {
         const labels = historicalData.map(price => price.date);
         const prices = historicalData.map(price => price.closePrice);
