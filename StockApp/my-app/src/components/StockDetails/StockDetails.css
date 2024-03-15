@@ -1,13 +1,22 @@
 /* StockDetails.css */
 
 .overview-container {
-    max-width: 850px;
-    margin: 0 auto;
-    padding: 20px;
-  }
+  display: flex;
+  margin: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 .overview-details, .historical-prices {
     margin-bottom: 20px;
+    flex: 1;
+    padding-right: 40px;
+}
+
+.line-graph {
+  width: 100%;
+  max-width: 850px;
+  margin: 10px auto; /* Adjust margin */
 }
 
 .overview-details {
@@ -15,6 +24,9 @@
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 850px;
+  margin: 20px auto;
+  padding: 10px;
 }
 
 
@@ -43,15 +55,10 @@
   font-family: 'Arial', sans-serif; 
   font-size: 14px;
   color: #333;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 15px;
 }
 
-  
-.overview-heading, .historical-prices .overview-heading{
-    font-size: 24px;
-    margin-bottom: 10px;
-}
 
 .overview-info {
   margin-bottom: 10px;
@@ -69,12 +76,14 @@
 
 
 .historical-prices {
-    max-height: 320px; /* Set a maximum height for the container */
+    max-height: 350px; /* Set a maximum height for the container */
     overflow-y: auto; /* Enable vertical scrolling */
     border: 1px solid #ccc; /* Add a border for visual separation */
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 20px;
+    max-width: 850px;
+    margin: 20px auto;
   }
 
   .historical-price-item:hover {
