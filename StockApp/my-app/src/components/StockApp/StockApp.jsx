@@ -61,4 +61,5 @@ const StockApp = () => {
 
 
 export default StockApp;
+//export stocks maps so that we can display logos on stock details page
 export { stocks };

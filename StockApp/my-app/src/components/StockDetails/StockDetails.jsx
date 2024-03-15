@@ -101,8 +101,10 @@ const StockDetails = () => {
                     <h2 className="stock-name">{overviewData.Name}</h2>
                     <img src={stock.logo} alt={stock.ticker} className="stock-symbol" />
                         <div className="overview-info">
-                            <p><strong>Sector:</strong> {overviewData.Sector || "N/A"}</p>
+                            <p><strong>Symbol:</strong> {overviewData.Symbol || "N/A"}</p>
                             <p><strong>Asset Type:</strong> {overviewData.AssetType || "N/A"}</p>
+                            <p><strong>Exchange:</strong> {overviewData.Exchange || "N/A"}</p>
+                            <p><strong>Sector:</strong> {overviewData.Sector || "N/A"}</p>
                             <p><strong>Industry:</strong> {overviewData.Industry || "N/A"}</p>
                             <p><strong>Market Capitalization:</strong> {overviewData.MarketCapitalization || "N/A"}</p>
                         </div>
