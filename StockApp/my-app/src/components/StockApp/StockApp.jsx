@@ -22,25 +22,29 @@ import CSCOLogo from '../assets/company_logos/cisco.png';
 import VLogo from '../assets/company_logos/visa.png';
 import AMDLogo from '../assets/company_logos/amd.png';
 
+//stock map that contains ticker information
+const stocks = [
+    {ticker: 'AAPL', companyName: 'Apple Inc.', logo: AAPLLogo},
+    {ticker: 'GOOGL', companyName: 'Alphabet Inc.', logo: GOOGLLogo},
+    {ticker: 'MSFT', companyName: 'Microsoft Corporation', logo: MSFTLogo},
+    {ticker: 'AMZN', companyName: 'Amazon', logo: AMZNLogo},
+    {ticker: 'META', companyName: 'Meta Plaforms Inc', logo: FBLogo },
+    {ticker: 'TSLA', companyName: 'Telsa', logo: TSLALogo},
+    {ticker: 'NVDA', companyName: 'Nvidia', logo: NVDALogo},
+    {ticker: 'INTC', companyName: 'Intel', logo: INTCLogo},
+    {ticker: 'NFLX', companyName: 'Netflix', logo: NFLXLogo},
+    {ticker: 'ADBE', companyName: 'Adobe', logo: ADBELogo},
+    {ticker: 'CRM', companyName: 'Salesforce Inc', logo: CRMLogo},
+    {ticker: 'PYPL', companyName: 'Paypal Holdings Inc', logo: PYPLLogo },
+    {ticker: 'CSCO', companyName: 'Cisco Systems', logo: CSCOLogo},
+    {ticker: 'V', companyName: 'Visa Inc', logo: VLogo},
+    {ticker: 'AMD', companyName: 'Advanced Micro Devices, Inc', logo: AMDLogo},
+];
+  
+
+
 
 const StockApp = () => {
-    const stocks = [
-      {ticker: 'AAPL', companyName: 'Apple Inc.', logo: AAPLLogo},
-      {ticker: 'GOOGL', companyName: 'Alphabet Inc.', logo: GOOGLLogo},
-      {ticker: 'MSFT', companyName: 'Microsoft Corporation', logo: MSFTLogo},
-      {ticker: 'AMZN', companyName: 'Amazon', logo: AMZNLogo},
-      {ticker: 'META', companyName: 'Meta Plaforms Inc', logo: FBLogo },
-      {ticker: 'TSLA', companyName: 'Telsa', logo: TSLALogo},
-      {ticker: 'NVDA', companyName: 'Nvidia', logo: NVDALogo},
-      {ticker: 'INTC', companyName: 'Intel', logo: INTCLogo},
-      {ticker: 'NFLX', companyName: 'Netflix', logo: NFLXLogo},
-      {ticker: 'ADBE', companyName: 'Adobe', logo: ADBELogo},
-      {ticker: 'CRM', companyName: 'Salesforce Inc', logo: CRMLogo},
-      {ticker: 'PYPL', companyName: 'Paypal Holdings Inc', logo: PYPLLogo },
-      {ticker: 'CSCO', companyName: 'Cisco Systems', logo: CSCOLogo},
-      {ticker: 'V', companyName: 'Visa Inc', logo: VLogo},
-      {ticker: 'AMD', companyName: 'Advanced Micro Devices, Inc', logo: AMDLogo},
-    ];
 
   return (
     <div className="page-container">
@@ -58,4 +62,6 @@ const StockApp = () => {
   )
 }
 
-export default StockApp
+
+export default StockApp;
+export { stocks };
