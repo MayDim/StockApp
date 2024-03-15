@@ -29,13 +29,16 @@ const StockDetail = () => {
       const fetchHistoricalData = async () => {
           try {
               const response = await fetch(url_time_series_daily);
-              if (!response.ok) {
+              if (!response.ok) { //Error check
                   throw new Error('Network response was not ok');
               }
               const data = await response.json();
-              // Extract historical prices data
+              // Extract historical prices data and store in var
               const timeSeriesData = data["Time Series (Daily)"];
+              //declare empty array to input data
               const historicalPrices = [];
+
+              //given each date grab appropraite data and store into map 
               for (const date in timeSeriesData) {
                   const priceData = timeSeriesData[date];
                   historicalPrices.push({
@@ -86,18 +89,16 @@ const StockDetail = () => {
             {loading ? (
                 <div className="loading">Loading </div>
             ) : (
-                overviewData && (
-                    <div> 
-                        <h2 className="stock-name">{overviewData.Name}</h2>
+                <div> 
+                    <h2 className="stock-name">{overviewData.Name}</h2>
                         <div className="overview-info">
                             <p><strong>Sector:</strong> {overviewData.Sector || "N/A"}</p>
                             <p><strong>Asset Type:</strong> {overviewData.AssetType || "N/A"}</p>
                             <p><strong>Industry:</strong> {overviewData.Industry || "N/A"}</p>
                             <p><strong>Market Capitalization:</strong> {overviewData.MarketCapitalization || "N/A"}</p>
                         </div>
-                        <p className="description">{overviewData.Description || "N/A"}</p>
-                    </div>
-                )
+                    <p className="description">{overviewData.Description || "N/A"}</p>
+                </div>
             )}
         </div>
         {/* Display historical prices */}
