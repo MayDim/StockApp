@@ -76,13 +76,12 @@
 
 
 .historical-prices {
-    max-height: 350px; /* Set a maximum height for the container */
+    max-height: 680px; /* Set a maximum height for the container */
     overflow-y: auto; /* Enable vertical scrolling */
     border: 1px solid #ccc; /* Add a border for visual separation */
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 20px;
-    max-width: 850px;
     margin: 20px auto;
   }
 
