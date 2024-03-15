@@ -19,6 +19,7 @@ const StockDetail = () => {
     //let url_overview = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${ticker}&apikey=${api_key}`
     //let url_time_series_daily = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${ticker}&apikey=${api_key}`
 
+    //demo links 
     let url_overview = "https://www.alphavantage.co/query?function=OVERVIEW&symbol=IBM&apikey=demo"
     let url_time_series_daily = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo"
 
@@ -97,18 +98,18 @@ const StockDetail = () => {
         </div>
         {/* Display historical prices */}
         <div className="historical-prices">
-            <h2 className="overview-heading">Historical Prices</h2>
+            <h2 className="overview-heading"> Price History</h2>
             {loading ? (
                 <div className="loading">Loading </div>
             ) : (
                 <div>
                     {historicalData.map((price, index) => (
                         <div key={index} className="historical-price-item">
-                            <p><strong>Date:</strong> {price.date}</p>
-                            <p><strong>Close Price:</strong> {price.closePrice.toFixed(2)}</p>
-                            <p><strong>Volume:</strong> {price.volume}</p>
+                            <p className="date"><strong>Date:</strong> {price.date}</p>
+                            <p className="close-price"><strong>Close Price:</strong> {price.closePrice.toFixed(2)}</p>
+                            <p className="volume"><strong>Volume:</strong> {price.volume}</p>
                             {index > 0 && (
-                                <p><strong>Percentage Change:</strong> {price.percentageChange.toFixed(2)}%</p>
+                                <p class="percentage-change"><strong>Percentage Change:</strong> {price.percentageChange.toFixed(2)}%</p>
                             )}
                         </div>
                     ))}

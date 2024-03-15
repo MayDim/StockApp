@@ -22,6 +22,22 @@
     padding: 10px;
     margin-bottom: 20px;
   }
+
+  .historical-price-item:hover {
+    background-color: #e0e0e0; /* Change background color on hover */
+  }
+  
+  .historical-price-item p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  .historical-price-item .date {
+    font-weight: bold;
+    font-style: italic;
+    color: #3083DC;
+  }
+  
   
   .historical-price-item {
     background-color: #f9f9f9;
