@@ -99,7 +99,7 @@ const StockDetails = () => {
             ) : (
                 <div> 
                     <h2 className="stock-name">{overviewData.Name}</h2>
-                    <img src={stock.logo} alt={stock.ticker} className="logo" />
+                    <img src={stock.logo} alt={stock.ticker} className="stock-symbol" />
                         <div className="overview-info">
                             <p><strong>Sector:</strong> {overviewData.Sector || "N/A"}</p>
                             <p><strong>Asset Type:</strong> {overviewData.AssetType || "N/A"}</p>

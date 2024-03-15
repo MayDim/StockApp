@@ -10,7 +10,7 @@ import AAPLLogo from '../assets/company_logos/apple.png';
 import GOOGLLogo from '../assets/company_logos/google.png';
 import MSFTLogo from '../assets/company_logos/microsoft.png';
 import AMZNLogo from '../assets/company_logos/amazon.png';
-import FBLogo from '../assets/company_logos/facebook.jpg';
+import METALogo from '../assets/company_logos/meta.png';
 import TSLALogo from '../assets/company_logos/tesla.png';
 import NVDALogo from '../assets/company_logos/nvidia.png';
 import INTCLogo from '../assets/company_logos/intel.png';
@@ -28,7 +28,7 @@ const stocks = [
     {ticker: 'GOOGL', companyName: 'Alphabet Inc.', logo: GOOGLLogo},
     {ticker: 'MSFT', companyName: 'Microsoft Corporation', logo: MSFTLogo},
     {ticker: 'AMZN', companyName: 'Amazon', logo: AMZNLogo},
-    {ticker: 'META', companyName: 'Meta Plaforms Inc', logo: FBLogo },
+    {ticker: 'META', companyName: 'Meta Plaforms Inc', logo: METALogo },
     {ticker: 'TSLA', companyName: 'Telsa', logo: TSLALogo},
     {ticker: 'NVDA', companyName: 'Nvidia', logo: NVDALogo},
     {ticker: 'INTC', companyName: 'Intel', logo: INTCLogo},
@@ -41,9 +41,6 @@ const stocks = [
     {ticker: 'AMD', companyName: 'Advanced Micro Devices, Inc', logo: AMDLogo},
 ];
   
-
-
-
 const StockApp = () => {
 
   return (

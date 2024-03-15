@@ -1,7 +1,7 @@
 /* StockDetails.css */
 
 .overview-container {
-    max-width: 800px;
+    max-width: 850px;
     margin: 0 auto;
     padding: 20px;
   }
@@ -29,6 +29,7 @@
   font-family: 'Roboto'; 
   font-size: 20px;
   margin-bottom: 5px;
+  color: #8499B1;
 }
 
 .overview-info p {
@@ -60,9 +61,10 @@
   margin: 5px 0;
 }
 
-.logo{
-  width: 100px;
+.stock-symbol{
+  width: 150px;
   height: auto;
+  margin: 20px;
 }
 
 
