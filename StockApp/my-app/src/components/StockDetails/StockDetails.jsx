@@ -1,12 +1,16 @@
-// StockDetail.js
+
 
 import { useParams } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import "./StockDetails.css";
-// Import the Google Fonts CSS file
-import './fonts.css'; // Adjust the path accordingly
+import './fonts.css';
 
-const StockDetail = () => {
+//retrive stocks maps to display corresonding stock logo
+import { stocks } from '../StockApp/StockApp';
+
+
+
+const StockDetails = () => {
     const { ticker } = useParams();
 
     //set data when retrieved
@@ -81,6 +85,10 @@ const StockDetail = () => {
       fetchOverviewData();
   }, [url_time_series_daily, url_overview, ticker]);
 
+    // Find the corresponding stock object from the stocks array
+    // Used to display logo
+    const stock = stocks.find(stock => stock.ticker === ticker);
+
   return (
     <div className="overview-container">
         {/* Display company overview */}
@@ -91,6 +99,7 @@ const StockDetail = () => {
             ) : (
                 <div> 
                     <h2 className="stock-name">{overviewData.Name}</h2>
+                    <img src={stock.logo} alt={stock.ticker} className="logo" />
                         <div className="overview-info">
                             <p><strong>Sector:</strong> {overviewData.Sector || "N/A"}</p>
                             <p><strong>Asset Type:</strong> {overviewData.AssetType || "N/A"}</p>
@@ -127,4 +136,4 @@ const StockDetail = () => {
   );
 };
 
-export default StockDetail;
+export default StockDetails;

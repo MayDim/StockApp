@@ -10,17 +10,24 @@
     margin-bottom: 20px;
 }
 
+.overview-details {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
 .overview-heading {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Raleway';
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
 .stock-name {
-  font-family: 'Roboto', sans-serif; 
+  font-family: 'Roboto'; 
   font-size: 20px;
-  font-weight: bold;
   margin-bottom: 5px;
 }
 
@@ -36,6 +43,7 @@
   font-size: 14px;
   color: #333;
   margin-top: 10px;
+  margin-bottom: 15px;
 }
 
   
@@ -52,9 +60,11 @@
   margin: 5px 0;
 }
 
-.description {
-  margin-top: 10px;
+.logo{
+  width: 100px;
+  height: auto;
 }
+
 
 .historical-prices {
     max-height: 320px; /* Set a maximum height for the container */
@@ -96,23 +106,6 @@
     color: #dc3545; /* Red color for negative percentage change */
   }
 
-
-  .overview-details {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .stock-name {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  
-  .description {
-    margin-bottom: 15px;
-  }
-  
   p {
     margin-bottom: 5px;
   }
