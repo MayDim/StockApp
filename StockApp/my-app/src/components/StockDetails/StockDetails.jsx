@@ -3,6 +3,8 @@
 import { useParams } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import "./StockDetails.css";
+// Import the Google Fonts CSS file
+import './fonts.css'; // Adjust the path accordingly
 
 const StockDetail = () => {
     const { ticker } = useParams();
@@ -19,6 +21,7 @@ const StockDetail = () => {
     //let url_overview = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${ticker}&apikey=${api_key}`
     //let url_time_series_daily = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${ticker}&apikey=${api_key}`
 
+    //demo links 
     let url_overview = "https://www.alphavantage.co/query?function=OVERVIEW&symbol=IBM&apikey=demo"
     let url_time_series_daily = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo"
 
@@ -84,31 +87,35 @@ const StockDetail = () => {
                 <div className="loading">Loading </div>
             ) : (
                 overviewData && (
-                    <div>
+                    <div> 
                         <h2 className="stock-name">{overviewData.Name}</h2>
+                        <div className="overview-info">
+                            <p><strong>Sector:</strong> {overviewData.Sector || "N/A"}</p>
+                            <p><strong>Asset Type:</strong> {overviewData.AssetType || "N/A"}</p>
+                            <p><strong>Industry:</strong> {overviewData.Industry || "N/A"}</p>
+                            <p><strong>Market Capitalization:</strong> {overviewData.MarketCapitalization || "N/A"}</p>
+                        </div>
                         <p className="description">{overviewData.Description || "N/A"}</p>
-                        <p><strong>Sector:</strong> {overviewData.Sector || "N/A"}</p>
-                        <p><strong>Asset Type:</strong> {overviewData.AssetType || "N/A"}</p>
-                        <p><strong>Industry:</strong> {overviewData.Industry || "N/A"}</p>
-                        <p><strong>Market Capitalization:</strong> {overviewData.MarketCapitalization || "N/A"}</p>
                     </div>
                 )
             )}
         </div>
         {/* Display historical prices */}
         <div className="historical-prices">
-            <h2 className="overview-heading">Historical Prices</h2>
+            <h2 className="overview-heading"> Price History</h2>
             {loading ? (
                 <div className="loading">Loading </div>
             ) : (
                 <div>
                     {historicalData.map((price, index) => (
                         <div key={index} className="historical-price-item">
-                            <p><strong>Date:</strong> {price.date}</p>
-                            <p><strong>Close Price:</strong> {price.closePrice.toFixed(2)}</p>
-                            <p><strong>Volume:</strong> {price.volume}</p>
+                            <p className="date"><strong>Date:</strong> {price.date}</p>
+                            <p className="close-price"><strong>Close Price:</strong> {price.closePrice.toFixed(2)}</p>
+                            <p className="volume"><strong>Volume:</strong> {price.volume}</p>
                             {index > 0 && (
-                                <p><strong>Percentage Change:</strong> {price.percentageChange.toFixed(2)}%</p>
+                                <p class={price.percentageChange >= 0 ? "percentage-change positive" : "percentage-change negative"}>
+                                    <strong>Percentage Change:</strong> {price.percentageChange.toFixed(2)}%  
+                                </p>
                             )}
                         </div>
                     ))}
