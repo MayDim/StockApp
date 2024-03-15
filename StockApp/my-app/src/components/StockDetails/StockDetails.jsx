@@ -85,6 +85,8 @@ const StockDetails = () => {
       fetchOverviewData();
   }, [url_time_series_daily, url_overview, ticker]);
 
+  
+
     // Find the corresponding stock object from the stocks array
     // Used to display logo
     const stock = stocks.find(stock => stock.ticker === ticker);
