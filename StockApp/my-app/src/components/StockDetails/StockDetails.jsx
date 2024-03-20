@@ -44,15 +44,15 @@ const StockDetails = () => {
     const [historicalData, setHistoricalData] = useState([]);
     
     //api key
-    let api_key = "T5IX5WZYJ53YVR9W";
+    //let api_key = "T5IX5WZYJ53YVR9W";
 
     //api urls
-    let url_overview = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${ticker}&apikey=${api_key}`
-    let url_time_series_daily = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${ticker}&apikey=${api_key}`
+    //let url_overview = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${ticker}&apikey=${api_key}`
+    //let url_time_series_daily = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${ticker}&apikey=${api_key}`
 
     //demo links 
-    //let url_overview = "https://www.alphavantage.co/query?function=OVERVIEW&symbol=IBM&apikey=demo"
-    //let url_time_series_daily = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo"
+    let url_overview = "https://www.alphavantage.co/query?function=OVERVIEW&symbol=IBM&apikey=demo"
+    let url_time_series_daily = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo"
 
     useEffect(() => {
       const fetchHistoricalData = async () => {
