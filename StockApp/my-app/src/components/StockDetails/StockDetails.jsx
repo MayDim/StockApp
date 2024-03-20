@@ -44,16 +44,19 @@ const StockDetails = () => {
     const [historicalData, setHistoricalData] = useState([]);
     
     //api key
-    let api_key = "T5IX5WZYJ53YVR9W";
+    //let api_key = "T5IX5WZYJ53YVR9W";
 
     //api urls
-    let url_overview = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${ticker}&apikey=${api_key}`
-    let url_time_series_daily = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${ticker}&apikey=${api_key}`
+    //let url_overview = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${ticker}&apikey=${api_key}`
+    //let url_time_series_daily = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${ticker}&apikey=${api_key}`
 
     //demo links 
-    //let url_overview = "https://www.alphavantage.co/query?function=OVERVIEW&symbol=IBM&apikey=demo"
-    //let url_time_series_daily = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo"
+    let url_overview = "https://www.alphavantage.co/query?function=OVERVIEW&symbol=IBM&apikey=demo"
+    let url_time_series_daily = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo"
 
+
+    //why use useEffect?
+    //single initialization and prevents endless fetching, great for handling asynchronous tasks
     useEffect(() => {
       const fetchHistoricalData = async () => {
           try {
@@ -112,6 +115,7 @@ const StockDetails = () => {
 
     //create line graph from historical data map
     const renderLineGraph = () => {
+        //create an array of just labels and prices
         const labels = historicalData.map(price => price.date);
         const prices = historicalData.map(price => price.closePrice);
 
